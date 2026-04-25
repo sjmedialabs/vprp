@@ -408,3 +408,4 @@ export const adminService = {
 
 export * from "./mailchimp.service";
 export * from "./payments.service";
+export * from "./learning";

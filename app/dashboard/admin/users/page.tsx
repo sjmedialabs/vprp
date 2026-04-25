@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Download, Plus, Search } from 'lucide-react'
-import Image from 'next/image'
 
 export default function AdminUsersPage() {
   return (
@@ -25,16 +24,6 @@ export default function AdminUsersPage() {
         </div>
       </div>
 
-      <div className="mb-6 overflow-hidden rounded-2xl border border-border/70 bg-card/80 shadow-sm">
-        <Image
-          src="/stock/features-analytics.jpg"
-          alt="Admin managing user analytics"
-          width={1400}
-          height={420}
-          className="h-40 w-full object-cover md:h-48"
-        />
-      </div>
-      
       {/* Search and Filters */}
       <Card className="mb-6 border-border/70 shadow-sm">
         <CardContent className="flex flex-wrap gap-4 pt-6">
@@ -63,15 +52,6 @@ export default function AdminUsersPage() {
               <CardDescription>Complete user list</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-4 overflow-hidden rounded-xl border border-border/70">
-                <Image
-                  src="/stock/how-it-works-team.jpg"
-                  alt="Team collaborating on user management"
-                  width={1000}
-                  height={320}
-                  className="h-32 w-full object-cover"
-                />
-              </div>
               <p className="text-muted-foreground">No users registered yet.</p>
             </CardContent>
           </Card>

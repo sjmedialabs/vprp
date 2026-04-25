@@ -39,7 +39,11 @@ export function DashboardShell({
 
       {/* Main Content */}
       <div className="flex flex-1 flex-col overflow-hidden">
-        <DashboardHeader title={title} onMenuClick={() => setSidebarOpen(true)} />
+        <DashboardHeader
+          title={title}
+          role={role}
+          onMenuClick={() => setSidebarOpen(true)}
+        />
         <main className="flex-1 overflow-auto p-4 md:p-6">{children}</main>
       </div>
     </div>

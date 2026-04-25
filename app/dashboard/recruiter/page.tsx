@@ -1,7 +1,6 @@
 // Recruiter Dashboard - Setup Only
 // TODO: Implement recruiter-specific features with real data
 
-import { DashboardShell } from "@/components/layout/dashboard-shell";
 import {
   Card,
   CardContent,
@@ -27,13 +26,7 @@ import {
 
 export default function RecruiterDashboardPage() {
   return (
-    <DashboardShell
-      role="recruiter"
-      title="Dashboard"
-      userName="Hiring Manager"
-      userEmail="hr@techcorp.com"
-    >
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Welcome Section with CTA */}
         <div className="flex flex-col gap-4 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -348,6 +341,5 @@ export default function RecruiterDashboardPage() {
           </Card>
         </div>
       </div>
-    </DashboardShell>
   );
 }

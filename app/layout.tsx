@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { QueryProvider } from '@/components/providers/query-provider'
+import { ThemeProvider } from '@/components/providers/theme-provider'
+import { PageTransition } from '@/components/motion/page-transition'
+import { ParticleBackground } from '@/components/ui/particle-background'
 import './globals.css'
-
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'VPRP - Virtual Placement Readiness Platform',
@@ -36,9 +35,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <QueryProvider>{children}</QueryProvider>
+        <ParticleBackground />
+        <ThemeProvider>
+          <QueryProvider>
+            <PageTransition>{children}</PageTransition>
+          </QueryProvider>
+        </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

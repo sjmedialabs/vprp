@@ -1,8 +1,6 @@
 // Super Admin Dashboard - Setup Only
 // TODO: Implement admin-specific features with real data
 
-import { DashboardShell } from "@/components/layout/dashboard-shell";
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -18,25 +16,15 @@ import {
   GraduationCap,
   Building2,
   IndianRupee,
-  TrendingUp,
   ArrowRight,
   CheckCircle2,
   Clock,
   AlertTriangle,
-  Server,
-  Database,
-  Activity,
 } from "lucide-react";
 
 export default function AdminDashboardPage() {
   return (
-    <DashboardShell
-      role="admin"
-      title="Dashboard"
-      userName="Super Admin"
-      userEmail="admin@vprp.com"
-    >
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Welcome Section */}
         <div className="rounded-2xl border border-border/70 bg-gradient-to-r from-primary/10 via-card to-accent/40 p-6 shadow-sm">
           <h2 className="text-2xl font-bold text-foreground">
@@ -45,16 +33,6 @@ export default function AdminDashboardPage() {
           <p className="mt-1 text-muted-foreground">
             Monitor platform health, manage users, and track revenue
           </p>
-          <div className="mt-4 overflow-hidden rounded-xl border border-border/70">
-            <Image
-              src="/stock/dashboard-preview.jpg"
-              alt="Admin overview analytics"
-              width={1400}
-              height={420}
-              className="h-44 w-full object-cover"
-              priority
-            />
-          </div>
         </div>
 
         {/* Platform Stats */}
@@ -109,57 +87,6 @@ export default function AdminDashboardPage() {
           </Card>
         </div>
 
-        {/* System Health */}
-        <Card className="border-border/70 shadow-sm">
-          <CardHeader>
-            <CardTitle>System Health</CardTitle>
-            <CardDescription>
-              Platform status and performance metrics
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="mb-4 overflow-hidden rounded-xl border border-border/70">
-              <Image
-                src="/stock/features-analytics.jpg"
-                alt="Monitoring and system analytics"
-                width={1200}
-                height={360}
-                className="h-36 w-full object-cover md:h-44"
-              />
-            </div>
-            <div className="grid gap-4 md:grid-cols-4">
-              <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card/70 p-4">
-                <Server className="h-8 w-8 text-green-600" />
-                <div>
-                  <p className="text-sm font-medium">API Server</p>
-                  <p className="text-xs text-green-600">Operational</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card/70 p-4">
-                <Database className="h-8 w-8 text-green-600" />
-                <div>
-                  <p className="text-sm font-medium">Database</p>
-                  <p className="text-xs text-green-600">Healthy</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card/70 p-4">
-                <Activity className="h-8 w-8 text-green-600" />
-                <div>
-                  <p className="text-sm font-medium">Uptime</p>
-                  <p className="text-xs text-muted-foreground">99.98%</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card/70 p-4">
-                <TrendingUp className="h-8 w-8 text-blue-600" />
-                <div>
-                  <p className="text-sm font-medium">Response Time</p>
-                  <p className="text-xs text-muted-foreground">45ms avg</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Main Content Grid */}
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Pending Verifications */}
@@ -174,15 +101,6 @@ export default function AdminDashboardPage() {
               <Badge variant="destructive">12 pending</Badge>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="overflow-hidden rounded-xl border border-border/70">
-                <Image
-                  src="/stock/how-it-works-team.jpg"
-                  alt="Verification and team review"
-                  width={1000}
-                  height={340}
-                  className="h-32 w-full object-cover"
-                />
-              </div>
               {[
                 {
                   type: "College",
@@ -240,15 +158,6 @@ export default function AdminDashboardPage() {
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="overflow-hidden rounded-xl border border-border/70">
-                <Image
-                  src="/stock/hero-campus.jpg"
-                  alt="Institutions onboarding on the platform"
-                  width={1000}
-                  height={340}
-                  className="h-32 w-full object-cover"
-                />
-              </div>
               {[
                 {
                   college: "IIT Delhi",
@@ -376,6 +285,5 @@ export default function AdminDashboardPage() {
           </Card>
         </div>
       </div>
-    </DashboardShell>
   );
 }

@@ -18,6 +18,20 @@
   /auth
     /login                    # Auth module login page
     /signup                   # Auth module register page
+    /callback                 # OAuth callback route
+  /practice                   # Tab-based prep hub
+  /aptitude/[category]/[topic]
+  /programming/exercises/[language]
+  /programming/mcqs/[topic]
+  /programming/dsa/[topic]
+  /programming/interview/[topic]
+  /company/[company]/aptitude
+  /company/[company]/exam
+  /resources/colleges
+  /resources/career
+  /blog
+  /stories
+  /search
   /dashboard
     /student                  # Student dashboard & features
     /cpo                      # Placement Officer dashboard
@@ -38,6 +52,8 @@
 /components
   /layout                     # Dashboard shell, sidebar, header
   /providers                  # React Query provider
+  /learning                   # Tab hub + reusable detail templates
+  /motion                     # Framer Motion wrappers/transitions
   /ui/*                       # shadcn/ui components
 
 /modules
@@ -60,6 +76,7 @@
   /api-response.ts            # Standardized API responses
 
 /services                     # API service functions
+/services/learning            # Topics/progress/search services
 /supabase                     # SQL schema + RLS/storage placeholders
 /hooks                        # Custom React hooks
 /types                        # TypeScript type definitions
@@ -90,6 +107,8 @@ Copy `.env.example` to `.env.local` and fill in:
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
+SUPABASE_AUTH_GOOGLE_CLIENT_ID=
+SUPABASE_AUTH_GOOGLE_CLIENT_SECRET=
 
 # Razorpay
 RAZORPAY_KEY_ID=
@@ -103,6 +122,7 @@ MAILCHIMP_LIST_ID=
 
 # App
 NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
 ### 2. Database Setup
@@ -123,6 +143,13 @@ npm run dev
 2. **CPO (College Placement Officer)** - Manage students, coordinate with recruiters
 3. **Recruiter** - Post jobs, review applications, hire candidates
 4. **Admin/Super Admin** - Platform management, user administration
+
+## Animated Learning Hub
+
+- Global tab state with dynamic content blocks under `/practice`
+- Deep navigation routes for aptitude/programming/company/resources
+- Reusable detail page shell with breadcrumb, content sections, side rail and CTA
+- Framer Motion page and tab transitions
 
 ## API Response Format
 

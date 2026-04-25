@@ -79,6 +79,11 @@ export default function HomePage() {
               recruitment.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <Link href="/practice">
+                <Button size="lg" className="neon-border gap-2 bg-primary text-primary-foreground">
+                  Start Practice
+                </Button>
+              </Link>
               <Link href="/auth/signup?role=student">
                 <Button size="lg" className="gap-2">
                   <GraduationCap className="h-5 w-5" />

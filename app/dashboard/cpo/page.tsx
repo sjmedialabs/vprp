@@ -1,7 +1,6 @@
 // CPO Dashboard - Setup Only
 // TODO: Implement CPO-specific features with real data
 
-import { DashboardShell } from "@/components/layout/dashboard-shell";
 import {
   Card,
   CardContent,
@@ -27,13 +26,7 @@ import {
 
 export default function CPODashboardPage() {
   return (
-    <DashboardShell
-      role="cpo"
-      title="Dashboard"
-      userName="Dr. Sharma"
-      userEmail="placement@college.edu"
-    >
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Welcome Section */}
         <div className="rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 p-6">
           <h2 className="text-2xl font-bold text-foreground">
@@ -286,6 +279,5 @@ export default function CPODashboardPage() {
           </Card>
         </div>
       </div>
-    </DashboardShell>
   );
 }

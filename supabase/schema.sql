@@ -40,11 +40,39 @@ create table if not exists public.profiles (
 
 create table if not exists public.questions (
   id uuid primary key default gen_random_uuid(),
+  topic_id uuid,
   type text not null,
   difficulty text not null,
   topic text not null,
+  prompt text,
+  metadata jsonb default '{}'::jsonb,
   created_at timestamptz not null default now()
 );
+
+create table if not exists public.topics (
+  id uuid primary key default gen_random_uuid(),
+  slug text not null unique,
+  title text not null,
+  domain text not null,
+  category text not null,
+  difficulty text not null default 'Medium',
+  created_at timestamptz not null default now()
+);
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'questions_topic_id_fkey'
+  ) then
+    alter table public.questions
+      add constraint questions_topic_id_fkey
+      foreign key (topic_id)
+      references public.topics(id)
+      on delete set null;
+  end if;
+end $$;
 
 create table if not exists public.tests (
   id uuid primary key default gen_random_uuid(),
@@ -109,6 +137,16 @@ create table if not exists public.companies (
   created_at timestamptz not null default now()
 );
 
+create table if not exists public.exams (
+  id uuid primary key default gen_random_uuid(),
+  company_id uuid references public.companies(id) on delete cascade,
+  topic_id uuid references public.topics(id) on delete set null,
+  title text not null,
+  exam_type text not null default 'placement',
+  metadata jsonb default '{}'::jsonb,
+  created_at timestamptz not null default now()
+);
+
 create table if not exists public.jobs (
   id uuid primary key default gen_random_uuid(),
   company_id uuid not null references public.companies(id) on delete cascade,
@@ -148,6 +186,23 @@ create table if not exists public.integrity_logs (
   created_at timestamptz not null default now()
 );
 
+create table if not exists public.progress (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references public.users(id) on delete cascade,
+  topic_id uuid not null references public.topics(id) on delete cascade,
+  completion int not null default 0,
+  last_accessed_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  created_at timestamptz not null default now(),
+  unique (user_id, topic_id)
+);
+
+create index if not exists idx_topics_domain_category on public.topics(domain, category);
+create index if not exists idx_questions_topic_id on public.questions(topic_id);
+create index if not exists idx_exams_company_id on public.exams(company_id);
+create index if not exists idx_progress_user_id on public.progress(user_id);
+create index if not exists idx_progress_topic_id on public.progress(topic_id);
+
 -- Storage bucket placeholders
 insert into storage.buckets (id, name, public)
 values ('resumes', 'resumes', false)
@@ -168,6 +223,10 @@ alter table public.jobs enable row level security;
 alter table public.applications enable row level security;
 alter table public.subscriptions enable row level security;
 alter table public.payments enable row level security;
+alter table public.topics enable row level security;
+alter table public.questions enable row level security;
+alter table public.exams enable row level security;
+alter table public.progress enable row level security;
 
 create policy "placeholder_select_policy_users"
 on public.users
@@ -178,3 +237,23 @@ create policy "placeholder_select_policy_profiles"
 on public.profiles
 for select
 using (true);
+
+create policy "placeholder_select_policy_topics"
+on public.topics
+for select
+using (true);
+
+create policy "placeholder_select_policy_questions"
+on public.questions
+for select
+using (true);
+
+create policy "placeholder_select_policy_exams"
+on public.exams
+for select
+using (true);
+
+create policy "placeholder_select_policy_progress"
+on public.progress
+for select
+using (auth.uid() = user_id);

@@ -1,6 +1,7 @@
 "use client";
 
 import { Bell, Search, Menu } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -15,10 +16,11 @@ import { Badge } from "@/components/ui/badge";
 
 interface DashboardHeaderProps {
   title: string;
+  role?: "student" | "cpo" | "recruiter" | "admin" | "super_admin";
   onMenuClick?: () => void;
 }
 
-export function DashboardHeader({ title, onMenuClick }: DashboardHeaderProps) {
+export function DashboardHeader({ title, role, onMenuClick }: DashboardHeaderProps) {
   return (
     <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-border/70 bg-background/90 px-4 backdrop-blur md:px-6">
       <div className="flex items-center gap-4">
@@ -45,6 +47,8 @@ export function DashboardHeader({ title, onMenuClick }: DashboardHeaderProps) {
             className="w-64 rounded-full border-border/70 bg-card/80 pl-9"
           />
         </div>
+
+        {(role === "admin" || role === "super_admin") && <ThemeToggle />}
 
         {/* Notifications */}
         <DropdownMenu>

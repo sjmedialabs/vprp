@@ -1,7 +1,6 @@
 // Student Dashboard - Setup Only
 // TODO: Implement student-specific features with real data
 
-import { DashboardShell } from "@/components/layout/dashboard-shell";
 import {
   Card,
   CardContent,
@@ -25,13 +24,7 @@ import {
 
 export default function StudentDashboardPage() {
   return (
-    <DashboardShell
-      role="student"
-      title="Dashboard"
-      userName="John Doe"
-      userEmail="john.doe@college.edu"
-    >
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Welcome Section */}
         <div className="rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 p-6">
           <h2 className="text-2xl font-bold text-foreground">
@@ -302,6 +295,5 @@ export default function StudentDashboardPage() {
           </Card>
         </div>
       </div>
-    </DashboardShell>
   );
 }

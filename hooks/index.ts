@@ -6,6 +6,7 @@
 // Re-export existing hooks
 export { useMobile } from "./use-mobile";
 export { useToast, toast } from "./use-toast";
+export { useSearch, useTopics } from "./use-learning";
 
 // ============================================================================
 // AUTH HOOKS (Placeholder)
