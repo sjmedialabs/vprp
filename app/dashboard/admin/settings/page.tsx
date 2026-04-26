@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Switch } from '@/components/ui/switch'
+import Link from 'next/link'
 
 export default function AdminSettingsPage() {
   return (
@@ -46,7 +47,9 @@ export default function AdminSettingsPage() {
                 </div>
                 <Switch defaultChecked />
               </div>
-              <Button>Save Settings</Button>
+              <Button asChild>
+                <Link href="/dashboard/admin">Save Settings</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>
@@ -108,7 +111,9 @@ export default function AdminSettingsPage() {
                 <Label htmlFor="mailchimpListId">Default List ID</Label>
                 <Input id="mailchimpListId" placeholder="Enter default audience/list ID" />
               </div>
-              <Button>Save Configuration</Button>
+              <Button asChild>
+                <Link href="/dashboard/admin">Save Configuration</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>
@@ -132,7 +137,9 @@ export default function AdminSettingsPage() {
                 <Label htmlFor="webhookSecret">Webhook Secret</Label>
                 <Input id="webhookSecret" type="password" placeholder="Enter webhook secret" />
               </div>
-              <Button>Save Configuration</Button>
+              <Button asChild>
+                <Link href="/dashboard/admin">Save Configuration</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>

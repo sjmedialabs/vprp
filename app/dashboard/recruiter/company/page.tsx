@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import Link from 'next/link'
 
 export default function RecruiterCompanyPage() {
   return (
@@ -36,7 +37,9 @@ export default function RecruiterCompanyPage() {
               <Label htmlFor="companySize">Company Size</Label>
               <Input id="companySize" placeholder="e.g., 100-500 employees" />
             </div>
-            <Button>Save Changes</Button>
+            <Button asChild>
+              <Link href="/dashboard/recruiter">Save Changes</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -63,7 +66,9 @@ export default function RecruiterCompanyPage() {
               <Label htmlFor="founded">Founded Year</Label>
               <Input id="founded" type="number" placeholder="2020" />
             </div>
-            <Button>Save Changes</Button>
+            <Button asChild>
+              <Link href="/dashboard/recruiter">Save Changes</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -77,7 +82,9 @@ export default function RecruiterCompanyPage() {
             <div className="rounded-lg border-2 border-dashed p-8 text-center">
               <p className="text-muted-foreground">Drag and drop your logo here, or click to browse</p>
               <p className="mt-2 text-sm text-muted-foreground">Recommended: 200x200px, PNG or JPG</p>
-              <Button variant="outline" className="mt-4">Upload Logo</Button>
+              <Button variant="outline" className="mt-4" asChild>
+                <Link href="/dashboard/recruiter">Upload Logo</Link>
+              </Button>
             </div>
           </CardContent>
         </Card>

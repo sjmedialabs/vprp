@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import Link from 'next/link'
 
 export default function StudentProfilePage() {
   return (
@@ -32,7 +33,9 @@ export default function StudentProfilePage() {
               <Label htmlFor="phone">Phone</Label>
               <Input id="phone" type="tel" placeholder="+91 9876543210" />
             </div>
-            <Button>Save Changes</Button>
+            <Button asChild>
+              <Link href="/dashboard/student">Save Changes</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -65,7 +68,9 @@ export default function StudentProfilePage() {
                 <Input id="cgpa" type="number" step="0.01" placeholder="8.5" />
               </div>
             </div>
-            <Button>Save Changes</Button>
+            <Button asChild>
+              <Link href="/dashboard/student">Save Changes</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -80,7 +85,9 @@ export default function StudentProfilePage() {
               <Label htmlFor="skills">Skills (comma separated)</Label>
               <Textarea id="skills" placeholder="React, Node.js, Python, Communication..." />
             </div>
-            <Button>Update Skills</Button>
+            <Button asChild>
+              <Link href="/dashboard/student/passport">Update Skills</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -103,7 +110,9 @@ export default function StudentProfilePage() {
               <Label htmlFor="portfolio">Portfolio URL</Label>
               <Input id="portfolio" placeholder="https://yourportfolio.com" />
             </div>
-            <Button>Save Links</Button>
+            <Button asChild>
+              <Link href="/dashboard/student/passport">Save Links</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -117,7 +126,9 @@ export default function StudentProfilePage() {
             <div className="rounded-lg border-2 border-dashed p-8 text-center">
               <p className="text-muted-foreground">Drag and drop your resume here, or click to browse</p>
               <p className="mt-2 text-sm text-muted-foreground">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
-              <Button variant="outline" className="mt-4">Upload Resume</Button>
+              <Button variant="outline" className="mt-4" asChild>
+                <Link href="/dashboard/student/passport">Upload Resume</Link>
+              </Button>
             </div>
           </CardContent>
         </Card>

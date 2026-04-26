@@ -208,9 +208,9 @@ export function TabbedPrepHub() {
                     {section.label}
                   </h3>
                   <div className="flex flex-wrap gap-3">
-                    {section.topics.map((topic) => (
+                    {section.topics.map((topic, topicIndex) => (
                       <motion.div
-                        key={topic.href}
+                        key={`${section.label}-${topic.href}-${topic.label}-${topicIndex}`}
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.2 }}

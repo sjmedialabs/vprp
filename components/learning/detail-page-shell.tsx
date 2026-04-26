@@ -27,7 +27,7 @@ export function DetailPageShell({
         <div className="glass-card rounded-2xl p-5">
           <div className="mb-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
             {breadcrumb.map((crumb, index) => (
-              <span key={crumb.href} className="flex items-center gap-2">
+              <span key={`${crumb.href}-${crumb.label}-${index}`} className="flex items-center gap-2">
                 <Link href={crumb.href} className="hover:text-primary">
                   {crumb.label}
                 </Link>

@@ -5,20 +5,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function CPOCompaniesPage() {
   return (
     <div className="container mx-auto p-6">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold">Company Management</h1>
-        <Button>Invite Company</Button>
+        <Button asChild>
+          <Link href="/dashboard/cpo/students">Invite Company</Link>
+        </Button>
       </div>
       
       {/* Search */}
       <Card className="mb-6">
         <CardContent className="flex flex-wrap gap-4 pt-6">
           <Input placeholder="Search companies..." className="max-w-sm" />
-          <Button variant="outline">Filter by Industry</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/cpo/analytics">Filter by Industry</Link>
+          </Button>
         </CardContent>
       </Card>
 

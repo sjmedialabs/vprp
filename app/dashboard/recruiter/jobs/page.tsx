@@ -5,20 +5,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function RecruiterJobsPage() {
   return (
     <div className="container mx-auto p-6">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold">Job Postings</h1>
-        <Button>Create New Job</Button>
+        <Button asChild>
+          <Link href="/dashboard/recruiter/company">Create New Job</Link>
+        </Button>
       </div>
       
       {/* Search */}
       <Card className="mb-6">
         <CardContent className="flex flex-wrap gap-4 pt-6">
           <Input placeholder="Search jobs..." className="max-w-sm" />
-          <Button variant="outline">Filter by Status</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/recruiter/analytics">Filter by Status</Link>
+          </Button>
         </CardContent>
       </Card>
 

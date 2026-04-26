@@ -5,13 +5,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 export default function StudentRankingsPage() {
   return (
     <div className="container mx-auto p-6">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-3xl font-bold">Rankings</h1>
-        <Button variant="outline">View Full Leaderboard</Button>
+        <Button variant="outline" asChild>
+          <Link href="/dashboard/student/assessments">View Full Leaderboard</Link>
+        </Button>
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">

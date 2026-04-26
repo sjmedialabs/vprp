@@ -22,6 +22,8 @@ import {
   Bell,
   HelpCircle,
   LogOut,
+  UserCircle,
+  FileCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -36,6 +38,8 @@ interface NavItem {
 
 const studentNavItems: NavItem[] = [
   { title: "Dashboard", href: "/dashboard/student", icon: LayoutDashboard },
+  { title: "Onboarding", href: "/dashboard/student/onboarding", icon: UserCircle },
+  { title: "Baseline test", href: "/dashboard/student/baseline", icon: FileCheck },
   { title: "Profile", href: "/dashboard/student/profile", icon: User },
   { title: "Assessments", href: "/dashboard/student/assessments", icon: FileText },
   { title: "Jobs", href: "/dashboard/student/jobs", icon: Briefcase },
@@ -174,12 +178,15 @@ export function DashboardSidebar({
           </div>
         </div>
         <Button
+          asChild
           variant="ghost"
           size="sm"
           className="mt-3 w-full justify-start text-muted-foreground hover:text-destructive"
         >
-          <LogOut className="mr-2 h-4 w-4" />
-          Sign Out
+          <Link href="/auth/login">
+            <LogOut className="mr-2 h-4 w-4" />
+            Sign Out
+          </Link>
         </Button>
       </div>
     </div>

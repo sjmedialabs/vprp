@@ -23,6 +23,7 @@ import {
   XCircle,
   Plus,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function RecruiterDashboardPage() {
   return (
@@ -37,8 +38,10 @@ export default function RecruiterDashboardPage() {
               Access verified, placement-ready candidates from top colleges
             </p>
           </div>
-          <Button className="gap-2">
-            <Plus className="h-4 w-4" /> Post New Job
+          <Button className="gap-2" asChild>
+            <Link href="/dashboard/recruiter/jobs">
+              <Plus className="h-4 w-4" /> Post New Job
+            </Link>
           </Button>
         </div>
 
@@ -103,8 +106,10 @@ export default function RecruiterDashboardPage() {
                 <CardTitle>Recent Applications</CardTitle>
                 <CardDescription>Latest candidate applications</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/recruiter/applications">
+                  View All <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -162,8 +167,10 @@ export default function RecruiterDashboardPage() {
                     <Badge className="bg-green-100 text-green-800">
                       {app.score}%
                     </Badge>
-                    <Button variant="ghost" size="icon">
-                      <Eye className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" asChild>
+                      <Link href="/dashboard/recruiter/applications">
+                        <Eye className="h-4 w-4" />
+                      </Link>
                     </Button>
                   </div>
                 </div>
@@ -178,8 +185,10 @@ export default function RecruiterDashboardPage() {
                 <CardTitle>Active Job Postings</CardTitle>
                 <CardDescription>Your open positions</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                Manage <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/recruiter/jobs">
+                  Manage <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -235,8 +244,10 @@ export default function RecruiterDashboardPage() {
                 <CardTitle>Upcoming Interviews</CardTitle>
                 <CardDescription>Scheduled for this week</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                Calendar <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/recruiter/applications">
+                  Calendar <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">

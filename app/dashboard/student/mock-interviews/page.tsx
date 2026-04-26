@@ -4,6 +4,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function StudentMockInterviewsPage() {
   return (
@@ -18,7 +19,9 @@ export default function StudentMockInterviewsPage() {
             <CardDescription>Practice with our AI interviewer</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button className="w-full">Start AI Interview</Button>
+            <Button className="w-full" asChild>
+              <Link href="/practice">Start AI Interview</Link>
+            </Button>
           </CardContent>
         </Card>
         <Card>
@@ -27,7 +30,9 @@ export default function StudentMockInterviewsPage() {
             <CardDescription>Book a session with industry experts</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="outline" className="w-full">Browse Slots</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/dashboard/student/training">Browse Slots</Link>
+            </Button>
           </CardContent>
         </Card>
         <Card>
@@ -36,7 +41,9 @@ export default function StudentMockInterviewsPage() {
             <CardDescription>Practice with fellow students</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="outline" className="w-full">Find Partner</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/dashboard/student">Find Partner</Link>
+            </Button>
           </CardContent>
         </Card>
       </div>

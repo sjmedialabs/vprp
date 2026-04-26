@@ -4,13 +4,16 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function AdminSubscriptionsPage() {
   return (
     <div className="container mx-auto p-6">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold">Subscriptions & Payments</h1>
-        <Button>Create Plan</Button>
+        <Button asChild>
+          <Link href="/dashboard/admin/settings">Create Plan</Link>
+        </Button>
       </div>
       
       {/* Revenue Summary */}
@@ -58,7 +61,9 @@ export default function AdminSubscriptionsPage() {
               <CardContent>
                 <p className="text-2xl font-bold">INR 49,999/year</p>
                 <p className="mt-2 text-sm text-muted-foreground">0 active subscriptions</p>
-                <Button variant="outline" className="mt-4 w-full">Edit Plan</Button>
+                <Button variant="outline" className="mt-4 w-full" asChild>
+                  <Link href="/dashboard/admin/settings">Edit Plan</Link>
+                </Button>
               </CardContent>
             </Card>
             <Card>
@@ -69,7 +74,9 @@ export default function AdminSubscriptionsPage() {
               <CardContent>
                 <p className="text-2xl font-bold">INR 99,999/year</p>
                 <p className="mt-2 text-sm text-muted-foreground">0 active subscriptions</p>
-                <Button variant="outline" className="mt-4 w-full">Edit Plan</Button>
+                <Button variant="outline" className="mt-4 w-full" asChild>
+                  <Link href="/dashboard/admin/settings">Edit Plan</Link>
+                </Button>
               </CardContent>
             </Card>
             <Card>
@@ -80,7 +87,9 @@ export default function AdminSubscriptionsPage() {
               <CardContent>
                 <p className="text-2xl font-bold">INR 1,99,999/year</p>
                 <p className="mt-2 text-sm text-muted-foreground">0 active subscriptions</p>
-                <Button variant="outline" className="mt-4 w-full">Edit Plan</Button>
+                <Button variant="outline" className="mt-4 w-full" asChild>
+                  <Link href="/dashboard/admin/settings">Edit Plan</Link>
+                </Button>
               </CardContent>
             </Card>
           </div>

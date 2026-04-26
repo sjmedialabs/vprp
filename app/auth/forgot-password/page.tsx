@@ -15,7 +15,7 @@ export default function ForgotPasswordPage() {
         <CardDescription>Enter your email to receive a password reset link</CardDescription>
       </CardHeader>
       <CardContent>
-        <form className="space-y-4">
+        <form action="/auth/login" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" type="email" placeholder="you@example.com" />

@@ -4,6 +4,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function StudentAssessmentsPage() {
   return (
@@ -31,7 +32,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>30 questions | 45 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
               <Card>
@@ -40,7 +43,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>25 questions | 30 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
               <Card>
@@ -49,7 +54,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>20 questions | 25 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
             </CardContent>
@@ -68,7 +75,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>20 questions | 60 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
               <Card>
@@ -77,7 +86,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>15 questions | 45 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
               <Card>
@@ -86,7 +97,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>20 questions | 30 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
             </CardContent>
@@ -105,7 +118,9 @@ export default function StudentAssessmentsPage() {
                   <CardDescription>15 questions | 20 minutes</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Start Test</Button>
+                  <Button asChild className="w-full">
+                    <Link href="/practice">Start Test</Link>
+                  </Button>
                 </CardContent>
               </Card>
             </CardContent>

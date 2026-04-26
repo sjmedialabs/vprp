@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function AdminAssessmentsPage() {
   return (
@@ -12,8 +13,12 @@ export default function AdminAssessmentsPage() {
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold">Assessment Management</h1>
         <div className="flex gap-2">
-          <Button variant="outline">Import Questions</Button>
-          <Button>Create Assessment</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/admin/settings">Import Questions</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/dashboard/admin/settings">Create Assessment</Link>
+          </Button>
         </div>
       </div>
       
@@ -21,8 +26,12 @@ export default function AdminAssessmentsPage() {
       <Card className="mb-6">
         <CardContent className="flex flex-wrap gap-4 pt-6">
           <Input placeholder="Search assessments..." className="max-w-sm" />
-          <Button variant="outline">Filter by Type</Button>
-          <Button variant="outline">Filter by Difficulty</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/admin/settings">Filter by Type</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/admin/settings">Filter by Difficulty</Link>
+          </Button>
         </CardContent>
       </Card>
 
@@ -42,7 +51,9 @@ export default function AdminAssessmentsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">0 assessments</p>
-                <Button variant="outline" className="mt-4 w-full">Manage</Button>
+                <Button variant="outline" className="mt-4 w-full" asChild>
+                  <Link href="/dashboard/admin/settings">Manage</Link>
+                </Button>
               </CardContent>
             </Card>
             <Card>
@@ -52,7 +63,9 @@ export default function AdminAssessmentsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">0 assessments</p>
-                <Button variant="outline" className="mt-4 w-full">Manage</Button>
+                <Button variant="outline" className="mt-4 w-full" asChild>
+                  <Link href="/dashboard/admin/settings">Manage</Link>
+                </Button>
               </CardContent>
             </Card>
             <Card>
@@ -62,7 +75,9 @@ export default function AdminAssessmentsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">0 assessments</p>
-                <Button variant="outline" className="mt-4 w-full">Manage</Button>
+                <Button variant="outline" className="mt-4 w-full" asChild>
+                  <Link href="/dashboard/admin/settings">Manage</Link>
+                </Button>
               </CardContent>
             </Card>
           </div>

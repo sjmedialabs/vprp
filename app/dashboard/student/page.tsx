@@ -21,6 +21,7 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function StudentDashboardPage() {
   return (
@@ -100,8 +101,10 @@ export default function StudentDashboardPage() {
                   Your latest practice tests and evaluations
                 </CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/student/assessments">
+                  View All <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -155,8 +158,10 @@ export default function StudentDashboardPage() {
                 <CardTitle>Job Recommendations</CardTitle>
                 <CardDescription>Jobs matching your profile</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/student/jobs">
+                  View All <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -210,8 +215,10 @@ export default function StudentDashboardPage() {
                   Scheduled mock and actual interviews
                 </CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                Schedule <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/student/mock-interviews">
+                  Schedule <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -256,8 +263,10 @@ export default function StudentDashboardPage() {
                 <CardTitle>Training Progress</CardTitle>
                 <CardDescription>Your learning journey</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                Continue <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/student/training">
+                  Continue <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">

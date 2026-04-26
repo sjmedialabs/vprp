@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import Link from "next/link";
 import {
   Users,
   GraduationCap,
@@ -137,8 +138,8 @@ export default function AdminDashboardPage() {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline">
-                      Review
+                    <Button size="sm" variant="outline" asChild>
+                      <Link href="/dashboard/admin/users">Review</Link>
                     </Button>
                   </div>
                 </div>
@@ -153,8 +154,10 @@ export default function AdminDashboardPage() {
                 <CardTitle>Recent Transactions</CardTitle>
                 <CardDescription>Latest subscription payments</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/admin/subscriptions">
+                  View All <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">

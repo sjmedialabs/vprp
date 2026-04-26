@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function CPOSettingsPage() {
   return (
@@ -45,7 +46,9 @@ export default function CPOSettingsPage() {
                   <Input id="city" placeholder="Enter city" />
                 </div>
               </div>
-              <Button>Save Changes</Button>
+              <Button asChild>
+                <Link href="/dashboard/cpo">Save Changes</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>
@@ -60,7 +63,9 @@ export default function CPOSettingsPage() {
               <div className="rounded-lg border p-4">
                 <p className="font-medium">Current Plan: Free Trial</p>
                 <p className="text-sm text-muted-foreground">Upgrade to access premium features</p>
-                <Button className="mt-4">Upgrade Plan</Button>
+                <Button className="mt-4" asChild>
+                  <Link href="/dashboard/admin/subscriptions">Upgrade Plan</Link>
+                </Button>
               </div>
             </CardContent>
           </Card>
@@ -74,7 +79,9 @@ export default function CPOSettingsPage() {
             </CardHeader>
             <CardContent>
               <p className="mb-4 text-muted-foreground">No departments added yet.</p>
-              <Button>Add Department</Button>
+              <Button asChild>
+                <Link href="/dashboard/cpo/students">Add Department</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>
@@ -87,7 +94,9 @@ export default function CPOSettingsPage() {
             </CardHeader>
             <CardContent>
               <p className="mb-4 text-muted-foreground">No team members added yet.</p>
-              <Button>Invite Team Member</Button>
+              <Button asChild>
+                <Link href="/dashboard/cpo/students">Invite Team Member</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>

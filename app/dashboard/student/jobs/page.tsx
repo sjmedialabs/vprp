@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function StudentJobsPage() {
   return (
@@ -15,7 +16,9 @@ export default function StudentJobsPage() {
       <Card className="mb-6">
         <CardContent className="flex flex-wrap gap-4 pt-6">
           <Input placeholder="Search jobs..." className="max-w-sm" />
-          <Button variant="outline">Filter</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/student/rankings">Filter</Link>
+          </Button>
         </CardContent>
       </Card>
 
@@ -36,7 +39,9 @@ export default function StudentJobsPage() {
                   <CardTitle>Software Engineer</CardTitle>
                   <CardDescription>TechCorp Inc. | Bangalore, India</CardDescription>
                 </div>
-                <Button>Apply</Button>
+                <Button asChild>
+                  <Link href="/dashboard/student/profile">Apply</Link>
+                </Button>
               </div>
             </CardHeader>
             <CardContent>

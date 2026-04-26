@@ -5,9 +5,32 @@ export async function signInWithEmailPassword(email: string, password: string) {
   return supabase.auth.signInWithPassword({ email, password });
 }
 
-export async function signInWithEmailOtp(email: string) {
+export async function signInWithEmailOtp(
+  email: string,
+  options?: { shouldCreateUser?: boolean }
+) {
   const supabase = createBrowserSupabaseClient();
-  return supabase.auth.signInWithOtp({ email });
+  return supabase.auth.signInWithOtp({
+    email,
+    options: {
+      shouldCreateUser: options?.shouldCreateUser ?? true,
+      emailRedirectTo:
+        typeof window !== "undefined"
+          ? `${window.location.origin}/auth/callback`
+          : undefined,
+    },
+  });
+}
+
+export async function signInWithPhoneOtp(
+  phone: string,
+  options?: { shouldCreateUser?: boolean }
+) {
+  const supabase = createBrowserSupabaseClient();
+  return supabase.auth.signInWithOtp({
+    phone,
+    options: { shouldCreateUser: options?.shouldCreateUser ?? true },
+  });
 }
 
 export async function signInWithGoogle() {
@@ -26,6 +49,15 @@ export async function verifyEmailOtp(email: string, token: string) {
     email,
     token,
     type: "email",
+  });
+}
+
+export async function verifyPhoneOtp(phone: string, token: string) {
+  const supabase = createBrowserSupabaseClient();
+  return supabase.auth.verifyOtp({
+    phone,
+    token,
+    type: "sms",
   });
 }
 

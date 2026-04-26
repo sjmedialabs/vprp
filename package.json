@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "verify:env": "node scripts/verify-env-connection.mjs",
+    "seed:mock-users": "node scripts/seed-mock-users.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -38,6 +40,7 @@
     "@radix-ui/react-toggle-group": "1.1.11",
     "@radix-ui/react-tooltip": "1.2.8",
     "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.49.1",
     "@tanstack/react-query": "^5.100.2",
     "@tanstack/react-query-devtools": "^5.100.2",
     "@vercel/analytics": "1.6.1",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Shield } from "lucide-react";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function AuthLayout({
   children,
@@ -55,6 +56,7 @@ export default function AuthLayout({
             <span className="text-xl font-bold">VPRP</span>
           </Link>
           {children}
+          <Toaster richColors closeButton />
         </div>
       </div>
     </div>

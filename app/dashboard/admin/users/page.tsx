@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Download, Plus, Search } from 'lucide-react'
+import Link from 'next/link'
 
 export default function AdminUsersPage() {
   return (
@@ -13,13 +14,17 @@ export default function AdminUsersPage() {
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">User Management</h1>
         <div className="flex gap-2">
-          <Button variant="outline" className="gap-2">
-            <Download className="h-4 w-4" />
-            Export
+          <Button variant="outline" className="gap-2" asChild>
+            <Link href="/dashboard/admin/subscriptions">
+              <Download className="h-4 w-4" />
+              Export
+            </Link>
           </Button>
-          <Button className="gap-2">
-            <Plus className="h-4 w-4" />
-            Add User
+          <Button className="gap-2" asChild>
+            <Link href="/auth/signup">
+              <Plus className="h-4 w-4" />
+              Add User
+            </Link>
           </Button>
         </div>
       </div>
@@ -31,8 +36,12 @@ export default function AdminUsersPage() {
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input placeholder="Search users..." className="pl-9" />
           </div>
-          <Button variant="outline">Filter by Role</Button>
-          <Button variant="outline">Filter by Status</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/admin/settings">Filter by Role</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/admin/settings">Filter by Status</Link>
+          </Button>
         </CardContent>
       </Card>
 

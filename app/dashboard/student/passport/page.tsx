@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 export default function StudentPassportPage() {
   return (
@@ -13,8 +14,12 @@ export default function StudentPassportPage() {
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-3xl font-bold">Skill Passport</h1>
         <div className="flex gap-2">
-          <Button variant="outline">Share</Button>
-          <Button>Download PDF</Button>
+          <Button variant="outline" asChild>
+            <Link href="/support">Share</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/support">Download PDF</Link>
+          </Button>
         </div>
       </div>
 
@@ -100,7 +105,9 @@ export default function StudentPassportPage() {
                 <CardTitle>Verified Projects</CardTitle>
                 <CardDescription>Projects linked to your passport</CardDescription>
               </div>
-              <Button>Add Project</Button>
+              <Button asChild>
+                <Link href="/dashboard/student/profile">Add Project</Link>
+              </Button>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">No projects added yet.</p>

@@ -515,17 +515,17 @@ export default function HomePage() {
               <h4 className="mb-4 font-semibold">Resources</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <Link href="#" className="hover:text-foreground">
+                  <Link href="/documentation" className="hover:text-foreground">
                     Documentation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground">
+                  <Link href="/api-reference" className="hover:text-foreground">
                     API Reference
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground">
+                  <Link href="/support" className="hover:text-foreground">
                     Support
                   </Link>
                 </li>
@@ -535,17 +535,17 @@ export default function HomePage() {
               <h4 className="mb-4 font-semibold">Legal</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <Link href="#" className="hover:text-foreground">
+                  <Link href="/privacy-policy" className="hover:text-foreground">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground">
+                  <Link href="/terms-of-service" className="hover:text-foreground">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground">
+                  <Link href="/refund-policy" className="hover:text-foreground">
                     Refund Policy
                   </Link>
                 </li>

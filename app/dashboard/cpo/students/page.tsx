@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Link from 'next/link'
 
 export default function CPOStudentsPage() {
   return (
@@ -12,8 +13,12 @@ export default function CPOStudentsPage() {
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold">Student Management</h1>
         <div className="flex gap-2">
-          <Button variant="outline">Export</Button>
-          <Button>Add Student</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/cpo/analytics">Export</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/auth/signup?role=student">Add Student</Link>
+          </Button>
         </div>
       </div>
       
@@ -21,8 +26,12 @@ export default function CPOStudentsPage() {
       <Card className="mb-6">
         <CardContent className="flex flex-wrap gap-4 pt-6">
           <Input placeholder="Search students..." className="max-w-sm" />
-          <Button variant="outline">Filter by Department</Button>
-          <Button variant="outline">Filter by Status</Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/cpo/analytics">Filter by Department</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/cpo/analytics">Filter by Status</Link>
+          </Button>
         </CardContent>
       </Card>
 

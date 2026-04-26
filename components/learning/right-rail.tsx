@@ -15,8 +15,8 @@ export function RightRail({ relatedTopics }: RightRailProps) {
           <CardDescription>Continue learning path</CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
-          {relatedTopics.map((topic) => (
-            <Link key={topic.href} href={topic.href} className="chip-glow block rounded-md px-3 py-2 text-sm">
+          {relatedTopics.map((topic, index) => (
+            <Link key={`${topic.href}-${topic.label}-${index}`} href={topic.href} className="chip-glow block rounded-md px-3 py-2 text-sm">
               {topic.label}
             </Link>
           ))}

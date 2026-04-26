@@ -4,6 +4,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import Link from 'next/link'
 
 export default function StudentTrainingPage() {
   return (
@@ -37,7 +38,9 @@ export default function StudentTrainingPage() {
           <CardContent className="space-y-4">
             <Progress value={0} />
             <p className="text-sm text-muted-foreground">0 of 12 modules completed</p>
-            <Button variant="outline" className="w-full">Continue</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/practice">Continue</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -49,7 +52,9 @@ export default function StudentTrainingPage() {
           <CardContent className="space-y-4">
             <Progress value={0} />
             <p className="text-sm text-muted-foreground">0 of 20 modules completed</p>
-            <Button variant="outline" className="w-full">Continue</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/practice">Continue</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -61,7 +66,9 @@ export default function StudentTrainingPage() {
           <CardContent className="space-y-4">
             <Progress value={0} />
             <p className="text-sm text-muted-foreground">0 of 8 modules completed</p>
-            <Button variant="outline" className="w-full">Continue</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/practice">Continue</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -73,7 +80,9 @@ export default function StudentTrainingPage() {
           <CardContent className="space-y-4">
             <Progress value={0} />
             <p className="text-sm text-muted-foreground">0 of 5 modules completed</p>
-            <Button variant="outline" className="w-full">Continue</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/practice">Continue</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -85,7 +94,9 @@ export default function StudentTrainingPage() {
           <CardContent className="space-y-4">
             <Progress value={0} />
             <p className="text-sm text-muted-foreground">0 of 10 modules completed</p>
-            <Button variant="outline" className="w-full">Continue</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/practice">Continue</Link>
+            </Button>
           </CardContent>
         </Card>
 
@@ -97,7 +108,9 @@ export default function StudentTrainingPage() {
           <CardContent className="space-y-4">
             <Progress value={0} />
             <p className="text-sm text-muted-foreground">0 of 6 modules completed</p>
-            <Button variant="outline" className="w-full">Continue</Button>
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/practice">Continue</Link>
+            </Button>
           </CardContent>
         </Card>
       </div>

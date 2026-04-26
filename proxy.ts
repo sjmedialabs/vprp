@@ -16,6 +16,7 @@ const publicRoutes = [
   '/auth/forgot-password',
   '/auth/reset-password',
   '/auth/verify-email',
+  '/auth/callback',
 ]
 
 const roleProtectedPrefixes: Record<string, string[]> = {
@@ -29,7 +30,7 @@ const roleProtectedPrefixes: Record<string, string[]> = {
   '/admin/dashboard': ['admin', 'super_admin'],
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // If Supabase is not configured, allow all routes (demo mode)

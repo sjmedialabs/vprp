@@ -23,6 +23,7 @@ import {
   Clock,
   AlertCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function CPODashboardPage() {
   return (
@@ -99,8 +100,10 @@ export default function CPODashboardPage() {
                 <CardTitle>Upcoming Placement Drives</CardTitle>
                 <CardDescription>Scheduled campus visits</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/cpo/companies">
+                  View All <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -204,8 +207,10 @@ export default function CPODashboardPage() {
                 <CardTitle>Top Performers</CardTitle>
                 <CardDescription>Highest ranking students</CardDescription>
               </div>
-              <Button variant="ghost" size="sm">
-                View Rankings <ArrowRight className="ml-1 h-4 w-4" />
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/dashboard/cpo/students">
+                  View Rankings <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardHeader>
             <CardContent className="space-y-4">
